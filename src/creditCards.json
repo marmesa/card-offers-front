@@ -1,0 +1,84 @@
+
+{
+    "creditCards": [
+        {
+            "id": 1,
+            "title": "Cartão Verde",
+            "description": "Cartão de crédito verde.",
+            "annuity": 16.99,
+            "benefits": [
+                "Cashback de 1% em todas as compras",
+                "Isenção de anuidade no primeiro ano",
+                "Acesso a salas VIP em aeroportos"
+            ],
+            "limit": 1000,
+            "rating": 4.0,
+            "brand": "BANKO",
+            "category": "creditCards",
+            "image": [
+                "/images/green-card.png"
+               ]
+        },
+        {
+            "id": 2,
+            "title": "Cartão Azul",
+            "description": "Cartão de crédito azul.",
+            "benefits": [
+                "Cashback de 1,5% em todas as compras",
+                "Isenção de anuidade no primeiro ano",
+                "Acesso a salas VIP em aeroportos",
+                "Seguro viagem internacional"
+            ],
+            "annuity": 59.99,
+            "limit": 5000,
+            "rating": 4.2,
+            "brand": "BANKO",
+            "category": "creditCards",
+            "image": [
+                "/images/blue-card.png"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Cartão Roxo",
+            "description": "Cartão de crédito roxo.",
+            "benefits": [
+                "Cashback de 2% em todas as compras",
+                "Isenção de anuidade no primeiro ano",
+                "Acesso a salas VIP em aeroportos",
+                "Seguro viagem internacional",
+                "Programa de pontos que podem ser trocados por produtos e serviços"
+            ],
+            "annuity": 219.00,
+            "limit": 10000,
+            "rating": 4.5,
+            "brand": "BANKO",
+            "category": "creditCards",
+            "image": [
+                "/images/purple-card.png"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Cartão Preto",
+            "description": "Cartão de crédito preto.",
+            "benefits": [
+                "Cashback de 2,5% em todas as compras",
+                "Isenção de anuidade no primeiro ano",
+                "Acesso a salas VIP em aeroportos",
+                "Seguro viagem internacional",
+                "Programa de pontos que podem ser trocados por produtos e serviços",
+                "Consultor financeiro pessoal"
+            ],
+            "annuity": 851.00,
+            "limit": 10000,
+            "rating": 4.8,
+            "brand": "BANKO",
+            "category": "creditCards",
+            "image": [
+                "/images/black-card.png"
+            ]
+        }
+
+    ]
+}
