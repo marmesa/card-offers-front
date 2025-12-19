@@ -1,43 +1,80 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import bankoLogo from '../assets/banko.jpg';
+import Header from '../components/Header';
+import FeedbackBox from '../components/FeedbackBox';
+import Footer from '../components/Footer';
+import BlockButton from '../components/Button';
 
 export default function Register() {
+
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nome: '',
-    usuário: '',
+    usuario: '',
     senha: '',
     email: '',
-    cep: '',
-    endereco: '',
     telefone: '',
+    renda: '',
   });
+  const [feedback, setFeedback] = useState({ show: false, message: '', type: 'success', showLoginButton: false });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    let newValue = value;
+    if (name === 'telefone') {
+      // Remove non-digits
+      const digits = value.replace(/\D/g, '');
+      if (digits.length === 11) {
+        // Format to (99) 99999-9999
+        newValue = `(${digits.slice(0,2)}) ${digits.slice(2,7)}-${digits.slice(7,11)}`;
+      } else {
+        newValue = value;
+      }
+    }
+    setFormData({ ...formData, [name]: newValue });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Dados do formulário:', formData);
-
+    // Validações
+    if (formData.senha.length < 6) {
+      setFeedback({ show: true, message: 'A senha deve ter no mínimo 6 dígitos.', type: 'error', showLoginButton: false });
+      return;
+    }
+    if (!formData.email.includes('@')) {
+      setFeedback({ show: true, message: 'O email deve conter "@".', type: 'error', showLoginButton: false });
+      return;
+    }
+    const phoneRegex = /^\(\d{2}\) \d{5}-\d{4}$/;
+    if (!phoneRegex.test(formData.telefone)) {
+      setFeedback({ show: true, message: 'O telefone deve estar no formato (61) 91234-5678.', type: 'error', showLoginButton: false });
+      return;
+    }
     // Salva os dados do usuário no Local Storage
-    localStorage.setItem('user', JSON.stringify(formData));
-    
-    navigate('/login'); // Redireciona para a página de login após o cadastro
+    try {
+      localStorage.setItem('user', JSON.stringify(formData));
+      setFeedback({ show: true, message: 'Cadastro realizado com sucesso!', type: 'success', showLoginButton: true });
+    } catch (err) {
+      setFeedback({ show: true, message: 'Erro ao realizar cadastro. Tente novamente.', type: 'error', showLoginButton: false });
+    }
   };
 
   return (
     <div className="content-card">
-      <header>
-        <img src={bankoLogo} alt="Banko Logo" className="banko-logo" />
-        <h1>Cadastre-se</h1>
-      </header>
-
+      <Header user={null} />
       <section className="form-section">
+        {feedback.show && (
+          <FeedbackBox
+            message={feedback.message}
+            type={feedback.type}
+            onClose={() => setFeedback({ ...feedback, show: false })}
+            showConsultButton={feedback.showLoginButton}
+            actionLabel="Ir para tela de login."
+            onConsult={() => navigate('/login')}
+          />
+        )}
         <form onSubmit={handleSubmit} className="form-container">
+          {/* ...existing code... */}
           <label className="form-label">
             Usuário:
             <input
@@ -47,6 +84,7 @@ export default function Register() {
               onChange={handleChange}
               required
               className="form-input"
+              placeholder="marcelo123"
             />
           </label>
           <label className="form-label">
@@ -58,6 +96,7 @@ export default function Register() {
               onChange={handleChange}
               required
               className="form-input"
+              placeholder="123456"
             />
           </label>
           <label className="form-label">
@@ -69,6 +108,7 @@ export default function Register() {
               onChange={handleChange}
               required
               className="form-input"
+              placeholder="Marcelo Mendes"
             />
           </label>
           <label className="form-label">
@@ -80,28 +120,7 @@ export default function Register() {
               onChange={handleChange}
               required
               className="form-input"
-            />
-          </label>
-          <label className="form-label">
-            CEP:
-            <input
-              type="text"
-              name="cep"
-              value={formData.cep}
-              onChange={handleChange}
-              required
-              className="form-input"
-            />
-          </label>
-          <label className="form-label">
-            Endereço:
-            <input
-              type="text"
-              name="endereco"
-              value={formData.endereco}
-              onChange={handleChange}
-              required
-              className="form-input"
+              placeholder="marcelo@gmail.com"
             />
           </label>
           <label className="form-label">
@@ -113,15 +132,27 @@ export default function Register() {
               onChange={handleChange}
               required
               className="form-input"
+              placeholder="(61) 91234-5678"
             />
           </label>
-          <button type="submit" className="form-button">Cadastrar</button>
+          <label className="form-label">
+            Renda:
+            <input
+              type="number"
+              name="renda"
+              value={formData.renda}
+              onChange={handleChange}
+              required
+              className="form-input"
+              min="0"
+              step="0.01"
+              placeholder="5000.00"
+            />
+          </label>
+          <BlockButton type="submit">Cadastrar</BlockButton>
         </form>
       </section>
-
-      <footer>
-        <p>© 2025 - MVP Desenvolvimento Front-end Avançado - Marcelo Mendes de Sant'Anna</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

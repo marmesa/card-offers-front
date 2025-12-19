@@ -3,8 +3,8 @@
     "creditCards": [
         {
             "id": 1,
-            "title": "Cartão Verde",
-            "description": "Cartão de crédito verde.",
+            "title": "Cartão de Crédito Verde",
+            "description": "Ideal para quem está começando a construir crédito, com anuidade baixa e benefícios essenciais como cashback e acesso a salas VIP.",
             "annuity": 16.99,
             "benefits": [
                 "Cashback de 1% em todas as compras",
@@ -21,8 +21,8 @@
         },
         {
             "id": 2,
-            "title": "Cartão Azul",
-            "description": "Cartão de crédito azul.",
+            "title": "Cartão de Crédito Azul",
+            "description": "Perfeito para quem busca mais benefícios, incluindo seguro viagem internacional, cashback ampliado e isenção de anuidade no primeiro ano.",
             "benefits": [
                 "Cashback de 1,5% em todas as compras",
                 "Isenção de anuidade no primeiro ano",
@@ -40,8 +40,8 @@
         },
         {
             "id": 3,
-            "title": "Cartão Roxo",
-            "description": "Cartão de crédito roxo.",
+            "title": "Cartão de Crédito Roxo",
+            "description": "Cartão premium para quem valoriza programas de pontos, cashback elevado e ampla cobertura de seguros e benefícios exclusivos.",
             "benefits": [
                 "Cashback de 2% em todas as compras",
                 "Isenção de anuidade no primeiro ano",
@@ -60,8 +60,8 @@
         },
         {
             "id": 4,
-            "title": "Cartão Preto",
-            "description": "Cartão de crédito preto.",
+            "title": "Cartão de Crédito Preto",
+            "description": "O cartão mais exclusivo do banco, com limite elevado, consultor financeiro pessoal, máxima pontuação em programas de benefícios e acesso VIP internacional.",
             "benefits": [
                 "Cashback de 2,5% em todas as compras",
                 "Isenção de anuidade no primeiro ano",
@@ -71,7 +71,7 @@
                 "Consultor financeiro pessoal"
             ],
             "annuity": 851.00,
-            "limit": 10000,
+            "limit": 50000,
             "rating": 4.8,
             "brand": "BANKO",
             "category": "creditCards",
