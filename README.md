@@ -10,7 +10,7 @@ Este projeto é parte da entrega do curso de Desenvolvimento Front End Avançado
 <ol>
     <li><b>Registro:</b> Cadastro dos dados do cliente sendo necessário preencher usuário, senha (mínimo 6 dígitos), nome, email, telefone (formato (61) 91234-5678) e renda.</li>
     <li><b>Login:</b> Autenticação do cliente. Exibe erro se usuário ou senha estiverem incorretos.</li>
-    <li><b>Escolha do Cartão:</b> Seleção do cartão desejado. Sendo apresentado primeiramente o cartão que possui limite mais próximo da renda do cliente. Contratação só é possível se a renda for suficiente.</li>
+    <li><b>Escolha do Cartão:</b> Seleção do cartão desejado. Sendo apresentado primeiramente o cartão que possui limite mais próximo da renda do cliente. Contratação só é possível se a renda for superior ao limite do cartão escolhido.</li>
     <li><b>Resumo da Contratação:</b> Exibe detalhes do cartão contratado e do cliente.</li>
 </ol>
 
