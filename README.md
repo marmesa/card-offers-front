@@ -29,7 +29,6 @@ Este projeto é parte da entrega do curso de Desenvolvimento Front End Avançado
     <li>Utiliza <b>React</b> e <b>React Router</b> para navegação.</li>
     <li>Hooks principais: <b>useNavigate</b> (navegação), <b>useParams</b> (captura de parâmetros), <b>useLocation</b> (controle de origem e proteção de rotas).</li>
     <li>Validações de formulário e feedbacks visuais para melhor experiência do usuário.</li>
-    <li>Estrutura de componentes reutilizáveis para botões, feedbacks e navegação.</li>
 </ul>
 
 ## Como executar o front
