@@ -9,7 +9,7 @@ Este projeto é parte da entrega do curso de Desenvolvimento Front End Avançado
 <h3>Funcionalidades Principais</h3>
 <ul>
     <li><b>Cadastro de clientes:</b> Usuário, senha (mínimo 6 dígitos), nome, email, telefone (formato (61) 91234-5678) e renda.</li>
-    <li><b>Escolha e contratação de cartões:</b> Verde, azul, roxo ou preto. Contratação permitida apenas se a renda for maior que o limite do cartão.</li>
+    <li><b>Escolha e contratação de cartões:</b> Verde, azul, roxo ou preto. Sendo apresentado primeiramente o cartão que possui limite mais próximo da renda do cliente. Contratação permitida apenas se a renda for maior que o limite do cartão.</li>
     <li><b>Feedbacks:</b> Mensagens informativas e de erro durante todo o fluxo, conforme validações.</li>
     <li><b>Proteção de rotas:</b> Telas de escolha e confirmação só podem ser acessadas após login. Caso contrário, o usuário é redirecionado para o login com mensagem explicativa.</li>
     <li><b>Botão Voltar:</b> Disponível para facilitar a navegação entre as etapas do fluxo.</li>
